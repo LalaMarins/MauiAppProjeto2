@@ -64,14 +64,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Cadastro.xaml">
+	  <MauiXaml Update="Views\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RegisterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="ViewModel\" />
-	  <Folder Include="Views\" />
 	</ItemGroup>
 
 </Project>
