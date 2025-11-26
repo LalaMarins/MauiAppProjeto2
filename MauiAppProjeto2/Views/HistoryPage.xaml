@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppProjeto2.Views.HistoryPage"
+             Title="Histórico">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <VerticalStackLayout Grid.Row="0" Padding="10" Spacing="10" >
+
+            <Label Text="Filtrar por Data:" TextColor="White" FontAttributes="Bold"/>
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <DatePicker x:Name="dpInicio" Format="dd/MM/yyyy" />
+                <Label Text="até" VerticalOptions="Center" TextColor="Gray"/>
+                <DatePicker x:Name="dpFim" Format="dd/MM/yyyy" />
+            </HorizontalStackLayout>
+
+            <Grid ColumnDefinitions="*,*">
+                <Button Grid.Column="0" x:Name="btnFiltrar" Text="Filtrar" Margin="5"/>
+                <Button Grid.Column="1" x:Name="btnLimpar" Text="Limpar" Margin="5" BackgroundColor="#444"/>
+            </Grid>
+
+        </VerticalStackLayout>
+
+        <ListView Grid.Row="1" x:Name="listaHistorico" HasUnevenRows="True" SeparatorColor="#333" BackgroundColor="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="10" Margin="5" CornerRadius="5" BackgroundColor="#222" BorderColor="#444">
+                            <VerticalStackLayout Spacing="5">
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <Label Grid.Column="0" Text="{Binding Cidade}" FontAttributes="Bold" FontSize="18" TextColor="White"/>
+                                    <Label Grid.Column="1" Text="{Binding DataConsulta, StringFormat='{0:dd/MM/yy HH:mm}'}" TextColor="LightGray"/>
+                                </Grid>
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="{Binding Temperatura}" TextColor="#BA68C8" FontAttributes="Bold"/>
+                                    <Label Text="|" TextColor="Gray"/>
+                                    <Label Text="{Binding Descricao}" TextColor="White"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>

@@ -15,7 +15,7 @@ namespace MauiAppProjeto2
                 {
                     database = new SQLiteDatabaseHelper(
                         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                        "MauiAppProjeto2.db3")); // <-- Mudei o nome do arquivo para o nosso
+                        "MauiAppProjeto2.db3"));
                 }
                 return database;
             }
@@ -24,7 +24,7 @@ namespace MauiAppProjeto2
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Views.LoginPage());
         }
     }
 }

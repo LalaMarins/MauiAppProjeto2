@@ -8,9 +8,14 @@
     Title="MauiAppProjeto2"
     xmlns:views="clr-namespace:MauiAppProjeto2.Views">
 
-    <ShellContent
-        Title="Login"
-        ContentTemplate="{DataTemplate views:LoginPage}"
-        Route="LoginPage"/>
+    <TabBar>
+        <Tab Title="Clima" Icon="dotnet_bot.png">
+            <ShellContent ContentTemplate="{DataTemplate views:WeatherPage}" />
+        </Tab>
+        <Tab Title="Histórico" Icon="dotnet_bot.png">
+            <ShellContent ContentTemplate="{DataTemplate views:HistoryPage}" />
+        </Tab>
+
+    </TabBar>
 
 </Shell>
